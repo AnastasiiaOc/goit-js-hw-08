@@ -1,0 +1,43 @@
+
+body{
+    background-color:#FFFFFF;
+}
+ html {
+     box-sizing: border-box;
+ }
+
+ .gallery {
+
+     list-style: none;
+     display: flex;
+     flex-wrap: wrap;
+     list-style: none;
+     column-gap: 24px;
+     margin-top: 100px;
+     margin-left: 150px;
+    border: 1px solid red
+ }
+
+ .gallery-item {
+     display: flex;
+     margin-top: 24px;
+    flex-basis: calc((100% - 48px) / 3);
+   
+ } 
+
+ .gallery-image {
+     width: 360px;
+     height: 200px;
+     object-fit: cover;
+    /* border: 1px solid red */
+
+ } 
+
+
+
+
+/* <li class="gallery-item"><a class="gallery-link" href="large-image.jpg"><img class="gallery-image"
+src="small-image.jpg"
+data-source="large-image.jpg"
+alt="Image description"
+/></a></li> */
