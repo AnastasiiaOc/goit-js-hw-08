@@ -68,7 +68,8 @@ const images = [
 
 
 const gallery = document.querySelector(".gallery");//hTML
-const pictures = images.map(({ preview, original,description }) => `<li class="gallery-item">
+
+const pictures = images.map(({ preview, original, description }) => `<li class="gallery-item">
   <a class="gallery-link" href="${original}">
     <img
       class="gallery-image"
@@ -79,9 +80,48 @@ const pictures = images.map(({ preview, original,description }) => `<li class="g
   </a>
 </li>`).join("");//pour obtenir string on utilise join
 
-    
-gallery.insertAdjacentHTML("beforeend", pictures);
+gallery.insertAdjacentHTML("beforeend", pictures);  
+gallery.addEventListener("click", onClick);
 
-gallery.addEventListener("click", event => {
-    event.preventDefault();
-})
+function onClick(event) {
+  event.preventDefault();
+  if (!event.target.classList.contains("gallery-image")) {
+    return;
+  }
+const galleryId = event.target.getAttribute('data-source'); //or: const galleryId = event.target.dataset.source;
+  
+const currentItem = images.find(({original}) => original === galleryId);// const currentItem = images.find(({ id }) => id === (galleryId));// doesn't work as ID is the same for everyone
+  
+const instance = basicLightbox.create(`
+    <div class="modal">
+         <img class ="modal-image"
+      src="${currentItem.original}"
+      alt="${currentItem.description}"
+    />
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+`)
+instance.show()
+}
+

@@ -1,9 +1,11 @@
 
 body{
     background-color:#FFFFFF;
+    cursor: url("../image/hover.png");
 }
  html {
      box-sizing: border-box;
+   
  }
 
  .gallery {
@@ -15,7 +17,6 @@ body{
      column-gap: 24px;
      margin-top: 100px;
      margin-left: 150px;
-    border: 1px solid red
  }
 
  .gallery-item {
@@ -29,15 +30,17 @@ body{
      width: 360px;
      height: 200px;
      object-fit: cover;
-    /* border: 1px solid red */
+     /* border: 3px solid red  */
 
  } 
 
+ .gallery-image:hover{
+    border: 2px solid #4E75FF;
+    cursor: url("../image/hover.png");
+ }
 
-
-
-/* <li class="gallery-item"><a class="gallery-link" href="large-image.jpg"><img class="gallery-image"
-src="small-image.jpg"
-data-source="large-image.jpg"
-alt="Image description"
-/></a></li> */
+ .modal-image{
+width 1112px;
+ Height 640px;
+border: 1px solid black;
+ }
